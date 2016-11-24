@@ -1,0 +1,20 @@
+<div id="menu_ppal">
+	<?php foreach ($this->menu as $i => $menu){ ?>
+	<a href="<?php echo $menu ?>">[ <?php echo $i ?> ]</a>
+	<?php }//fin foreach ?>
+</div>
+
+<h1>Inicio</h1>
+
+<p>Solo una pagina de ejemplo</p>
+
+<?php
+$arch_info_error = 'tpl/info_error.phtml';
+$this->prepararVista($this->config, $arch_info_error);
+
+if ($this->getErrorPreparar() === false){
+	include($this->getArchivoPreparar());
+}else{
+	echo '<p>No se pudo cargar ' . $arch_info_error . '</p>';
+}
+?>

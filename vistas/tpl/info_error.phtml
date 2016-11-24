@@ -1,0 +1,21 @@
+<?php
+if ($this->vista["info"] != ""){
+?>
+
+<p class="aviso aviso_info">
+	<?php echo $this->vista["info"] ?>
+</p>
+
+<?php
+}//fin if
+
+if ($this->vista["error"] != ""){
+?>
+
+<p class="aviso aviso_error">
+	<?php echo $this->vista["error"] ?>
+</p>
+
+<?php
+}//fin if
+?>

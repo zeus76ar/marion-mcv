@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>404: Ocurrio un error :(</title>
+        <base href="<?php echo $vista['base'] ?>" />
+        <!-- CSS -->
+		<link rel="stylesheet" type="text/css"
+		href="<?php echo substr($config["dirvista"], 1) ?>css/404.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Error 404 <span>:(</span></h1>
+            <p>Lo sentimos, pero ha ocurido un error.</p>
+            <p>
+				Detalle:
+				<br>
+				<?php echo $vista['error'] ?>
+			</p>
+            <p>
+                <a href="index.php">[ Volver ]</a>
+            </p>
+        </div>
+    </body>
+</html>

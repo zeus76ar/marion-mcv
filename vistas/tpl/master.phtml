@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta name="description" content="" />
+		    <meta name="viewport" content="width=device-width, initial-scale=1" />
+			
+			<base href="<?php echo $this->vista['base'] ?>" />
+			
+			<title><?php echo $this->vista["titulo"] ?></title>
+			
+            <!-- CSS -->
+			<link rel="stylesheet" type="text/css"
+			href="<?php echo $this->obtenerUrlVistas() ?>css/main.css" />
+			
+			<?php
+            if ($this->vista['incluir_css_extra'] == 1){
+				$this->vista["error"] .=
+				$this->cargarExtrasVista('css', $this->vista['pagina']);
+            }
+            ?>
+		</head>
+		
+		<body>
+			<?php
+			if (trim($this->vista['pagina']) !== ''){
+				$this->prepararVista($this->config, $this->vista['pagina']);
+				
+				if ($this->getErrorPreparar() === false){
+					include($this->getArchivoPreparar());
+				}else{
+					echo '<p>No se pudo cargar ' . $this->vista['pagina'] . '</p>';
+				}
+			}//fin if
+			?>
+			
+			<script type="text/javascript">
+				var dirvista = '<?php echo $this->obtenerUrlVistas() ?>';
+			</script>
+			<script type="text/javascript"
+			src="<?php echo $this->obtenerUrlVistas() ?>js/main.js"></script>
+			
+			<?php
+            if ($this->vista['incluir_js_extra'] == 1){
+                $this->vista["error"] .=
+				$this->cargarExtrasVista('js', $this->vista['pagina']);
+            }
+            ?>
+		</body>
+	</html>
