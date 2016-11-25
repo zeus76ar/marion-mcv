@@ -13,10 +13,11 @@ Options -Indexes
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_URI} !/ws/ [NC]
+  # modificar el path siguiente con el correspondiente
   RewriteRule . /www/php/miswebs/marion-mcv/index.php [L]
 </IfModule>
 
-# para optimizar
+# para optimizar (opcional)
 
 # utilizar gzip (compresion )
 <ifModule mod_gzip.c>
