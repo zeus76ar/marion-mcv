@@ -1,0 +1,20 @@
+[ <a href="javascript:window.history.back()">Volver</a> ]
+<br><br>
+<div class="titulo"><?php echo $this->vista["titulo"] ?></div>
+
+<form id="form1" name="form1" action="<?php echo $this->vista["url_guardar"] ?>"
+method="post" autocomplete="1">
+    <p>
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto" name="texto"
+        placeholder="Ingrese un texto" required="1" autofocus="1"
+        value="<?php if (count($this->dato) > 0) echo $this->dato[0]['texto'] ?>" />
+    </p>
+    
+    <input type="hidden" id="hid" name="hid"
+    value="<?php if (count($this->dato) > 0) echo $this->dato[0]['codigo'] ?>">
+    
+    <button type="submit">Guardar</button>
+</form>
+
+<?php $this->_mostrarInfoError() ?>

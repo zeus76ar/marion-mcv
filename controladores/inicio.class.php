@@ -8,6 +8,18 @@ class Inicio extends Controlador{
 		$this->menu = array();
 	}
 	
+	protected function _mostrarInfoError(){
+        $arch_info_error = 'tpl/info_error.phtml';
+        $this->prepararVista($this->config, $arch_info_error);
+        
+        if ($this->getErrorPreparar() === false){
+            include($this->getArchivoPreparar());
+        }else{
+            echo '<p>No se pudo cargar ' . $arch_info_error . '</p>';
+        }
+    }
+	
+	//
 	public function index(){
 		$ou = new Url();
 		
@@ -19,6 +31,10 @@ class Inicio extends Controlador{
 		$this->menu['Inicio'] = $ou->generarUrlMenu($param, $this->config);
 		//genero la url del menu manualmente
 		$this->menu['Menu 1'] = 'inicio/index';
+		//
+		$param['c'] = 'datos';
+		$param['a'] = 'editar';
+		$this->menu['Datos'] = $ou->generarUrlMenu($param, $this->config);
 		
 		//cargo las vista
 		$this->vista["titulo"] = "Inicio";

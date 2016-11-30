@@ -1,0 +1,54 @@
+[ <a href="index.php">Inicio</a> ]
+<br><br>
+<div class="titulo"><?php echo $this->vista["titulo"] ?></div>
+
+<div class="total_datos">Mostrando <?php echo $this->vista["total_reg"] ?> datos.</div>
+
+<table border="1">
+    <thead>
+		<tr>
+			<th colspan="4">
+				[ <a href="<?php echo $this->vista["url_nuevo"] ?>">+ Nuevo</a> ]
+			</th>
+		</tr>
+        <tr>
+			<th class="celda_accion">&nbsp;</th>
+			<th class="celda_accion">&nbsp;</th>
+            <th class="celda_codigo">Codigo</th>
+            <th class="celda_texto">Texto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+		if ($this->vista["total_reg"] > 0){
+	        foreach ($this->datos as $ind => $valor){
+				$url_modifcar = $this->vista["url_modificar"] . "/" . $valor["codigo"];
+				$url_eliminar = $this->vista["url_eliminar"] . "/" . $valor["codigo"];
+		?>
+        <tr>
+			<td class="celda_accion">
+				[ <a href="<?php echo $url_modifcar ?>">* Modificar</a> ]
+			</td>
+			<td class="celda_accion">
+				[ <a href="javascript:eliminarDato('<?php echo $url_eliminar ?>')">- Eliminar</a> ]
+			</td>
+            <td class="celda_codigo"><?php echo $valor["codigo"] ?></td>
+            <td class="celda_texto"><?php echo $valor["texto"] ?></td>
+        </tr>
+        <?php
+            }//fin foreach
+        }else{
+        ?>
+        <tr>
+			<td class="celda_accion">&nbsp;</td>
+			<td class="celda_accion">&nbsp;</td>
+            <td class="celda_codigo">&nbsp;</td>
+            <td class="celda_texto">&nbsp;</td>
+        </tr>
+        <?php
+        }//fin if
+        ?>
+    </tbody>
+</table>
+
+<?php $this->_mostrarInfoError() ?>
