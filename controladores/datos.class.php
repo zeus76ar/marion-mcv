@@ -1,7 +1,6 @@
 <?php
 class Datos extends Controlador{
 	protected $otv; //tipo objeto
-	protected $total_reg;//tipo entero
     protected $ou;//tipo entero
     protected $datos;//tipo array
     protected $dato;//tipo array
@@ -9,7 +8,6 @@ class Datos extends Controlador{
 	function __construct(){
 		parent::__construct();
         
-        $this->total_reg = 0;
         $this->datos = array();
         $this->dato = array();
 	}
