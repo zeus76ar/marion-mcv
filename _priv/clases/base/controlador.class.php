@@ -117,7 +117,7 @@ class Controlador extends PrepararArchivo{
         return $this->url;
     }
 	
-	public function generarVista($html){
+	public function generarVista($html = ''){
 		/**
 		 * (solo para codigo anterior)
 		 * $html: pagina web a mostrar. Puede ser string (1 pagina) o un array (varias paginas)
