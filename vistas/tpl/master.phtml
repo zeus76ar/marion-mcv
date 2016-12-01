@@ -23,17 +23,7 @@
 		</head>
 		
 		<body>
-			<?php
-			if (trim($this->vista['pagina']) !== ''){
-				$this->prepararVista($this->config, $this->vista['pagina']);
-				
-				if ($this->getErrorPreparar() === false){
-					include($this->getArchivoPreparar());
-				}else{
-					echo '<p>No se pudo cargar ' . $this->vista['pagina'] . '</p>';
-				}
-			}//fin if
-			?>
+			<?php $this->cargarUnaVista($this->vista['pagina']) ?>
 			
 			<script type="text/javascript">
 				var dirvista = '<?php echo $this->obtenerUrlVistas() ?>';
