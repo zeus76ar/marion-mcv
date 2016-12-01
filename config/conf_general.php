@@ -14,8 +14,8 @@ $config["sist_anios"] = "2014";
 if (date("Y") != $config["sist_anios"]) $config["sist_anios"] .= "-" . date("Y");
 
 $config["sist_desarrollo"] = "Ariel Balmaceda. Analista Programador.";
-$config["sist_ver"] = "16.11";//año.mes
-$config["sist_subver"] = "23";//dia
+$config["sist_ver"] = "16.12";//año.mes
+$config["sist_subver"] = "01";//dia
 
 //usar sesion? 1: si, 0:no
 $config["usar_sesion"] = 1;

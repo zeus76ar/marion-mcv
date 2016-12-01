@@ -1,6 +1,6 @@
 <?php
 /*
-version: 16.11.23
+version: 16.12.01
 Autor: Ariel Balmaceda.
 Compatible con PHP 5.
 */
@@ -179,6 +179,18 @@ class Controlador extends PrepararArchivo{
 		return $retorno;
 	}
 	
+	public function cargarUnaVista($pagina){
+		if (trim($pagina) !== ''){
+			$this->prepararVista($this->config, $pagina);
+						
+			if ($this->getErrorPreparar() === false){
+				include($this->getArchivoPreparar());
+			}else{
+				echo '<p>No se pudo cargar ' . $pagina . '</p>';
+			}
+		}//fin if
+	}
+	
 	public function obtenerDirVistas(){
 		$retorno=".".$this->config['dirvista'];
 		
@@ -193,4 +205,3 @@ class Controlador extends PrepararArchivo{
 		return $retorno;
 	}//fin function
 }//fin clase
-?>
