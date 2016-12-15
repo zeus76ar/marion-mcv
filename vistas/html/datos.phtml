@@ -17,4 +17,7 @@ method="post" autocomplete="1">
     <button type="submit">Guardar</button>
 </form>
 
-<?php $this->_mostrarInfoError() ?>
+<?php
+$arch_info_error = 'tpl/info_error.phtml';
+$this->cargarUnaVista($arch_info_error);
+?>

@@ -2,4 +2,7 @@
 <br><br>
 <div class="titulo"><?php echo $this->vista["titulo"] ?></div>
 
-<?php $this->_mostrarInfoError() ?>
+<?php
+$arch_info_error = 'tpl/info_error.phtml';
+$this->cargarUnaVista($arch_info_error);
+?>

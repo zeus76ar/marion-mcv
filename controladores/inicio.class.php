@@ -8,17 +8,6 @@ class Inicio extends Controlador{
 		$this->menu = array();
 	}
 	
-	protected function _mostrarInfoError(){
-        $arch_info_error = 'tpl/info_error.phtml';
-        $this->prepararVista($this->config, $arch_info_error);
-        
-        if ($this->getErrorPreparar() === false){
-            include($this->getArchivoPreparar());
-        }else{
-            echo '<p>No se pudo cargar ' . $arch_info_error . '</p>';
-        }
-    }
-	
 	//
 	public function index(){
 		$ou = new Url();

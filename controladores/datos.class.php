@@ -64,17 +64,6 @@ class Datos extends Controlador{
 		$this->otv->setDatosConexion('', $this->config['mysql_host'], $this->config['mysql_bd'],
 		$this->config['mysql_usuario'], $this->config['mysql_clave']);
 	}
-	
-    protected function _mostrarInfoError(){
-        $arch_info_error = 'tpl/info_error.phtml';
-        $this->prepararVista($this->config, $arch_info_error);
-        
-        if ($this->getErrorPreparar() === false){
-            include($this->getArchivoPreparar());
-        }else{
-            echo '<p>No se pudo cargar ' . $arch_info_error . '</p>';
-        }
-    }
     
 	//
     public function editar(){
