@@ -160,25 +160,6 @@ class Controlador extends PrepararArchivo{
 		}
 	}
 	
-	public function cargarExtrasVista($tipo, $pagina){
-		/*
-		 *$tipo: 'js' - cargar archivo js, 'css' - cargar archivo css
-		 */
-		$retorno = '';
-		$partes = explode('.', $pagina);
-        $arch_extra = $partes[0] . '_' . strtolower($tipo) . '.phtml';
-		
-		$this->prepararVista($this->config, $arch_extra);
-		
-		if ($this->getErrorPreparar() === false){
-			include($this->getArchivoPreparar());
-		}else{
-			$retorno .= '<br>No se pudo cargar ' . $arch_extra;
-		}
-		
-		return $retorno;
-	}
-	
 	public function cargarUnaVista($pagina){
 		if (trim($pagina) !== ''){
 			$this->prepararVista($this->config, $pagina);

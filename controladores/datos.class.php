@@ -116,8 +116,8 @@ class Datos extends Controlador{
 		$this->vista["titulo"] = "Datos - Editar";
 		$this->vista["con_masterpage"] = 1;
 		$this->vista["pagina"] = "html/datos_editar.phtml";
-		$this->vista["incluir_css_extra"] = 1;
-		$this->vista["incluir_js_extra"] = 1;
+		$this->vista["css_extra"] = "html/extra_css/datos_editar_css.phtml";
+		$this->vista["js_extra"] = "html/extra_js/datos_editar_js.phtml";
 		
 		$this->generarVista();
     }
@@ -135,8 +135,8 @@ class Datos extends Controlador{
 		$this->vista["titulo"] = "Datos - Nuevo";
 		$this->vista["con_masterpage"] = 1;
 		$this->vista["pagina"] = "html/datos.phtml";
-		$this->vista["incluir_css_extra"] = 1;
-		$this->vista["incluir_js_extra"] = 0;
+		$this->vista["css_extra"] = "html/extra_css/datos_css.phtml";
+		$this->vista["js_extra"] = "";
 		
 		$this->generarVista();
         
@@ -174,8 +174,8 @@ class Datos extends Controlador{
 		$this->vista["titulo"] = "Datos - Modificar";
 		$this->vista["con_masterpage"] = 1;
 		$this->vista["pagina"] = "html/datos.phtml";
-		$this->vista["incluir_css_extra"] = 1;
-		$this->vista["incluir_js_extra"] = 0;
+		$this->vista["css_extra"] = "html/extra_css/datos_css.phtml";
+		$this->vista["js_extra"] = "";
 		
 		$this->generarVista();
     }//fin function
@@ -216,8 +216,8 @@ class Datos extends Controlador{
         $this->vista["titulo"] = "Datos - Resultado";
 		$this->vista["con_masterpage"] = 1;
 		$this->vista["pagina"] = "html/datos_resultado.phtml";
-		$this->vista["incluir_css_extra"] = 1;
-		$this->vista["incluir_js_extra"] = 0;
+		$this->vista["css_extra"] = "html/extra_css/datos_resultado_css.phtml";
+		$this->vista["js_extra"] = "";
 		
 		$this->generarVista();
     }//fin function
@@ -243,8 +243,8 @@ class Datos extends Controlador{
         $this->vista["titulo"] = "Datos - Resultado";
 		$this->vista["con_masterpage"] = 1;
 		$this->vista["pagina"] = "html/datos_resultado.phtml";
-		$this->vista["incluir_css_extra"] = 1;
-		$this->vista["incluir_js_extra"] = 0;
+		$this->vista["css_extra"] = "html/extra_css/datos_resultado_css.phtml";
+		$this->vista["js_extra"] = "";
 		
 		$this->generarVista();
 	}//fin function

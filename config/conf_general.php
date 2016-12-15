@@ -15,7 +15,7 @@ if (date("Y") != $config["sist_anios"]) $config["sist_anios"] .= "-" . date("Y")
 
 $config["sist_desarrollo"] = "Ariel Balmaceda. Analista Programador.";
 $config["sist_ver"] = "16.12";//año.mes
-$config["sist_subver"] = "01";//dia
+$config["sist_subver"] = "15";//dia
 
 //usar sesion? 1: si, 0:no
 $config["usar_sesion"] = 1;
@@ -50,8 +50,8 @@ $vista = array();
 $vista["masterpage"] = "tpl/master.phtml";
 $vista["con_masterpage"] = 1;//1: incluir pagina master, 0: no incluir pagina master
 $vista["pagina"] = "";
-$vista["incluir_css_extra"] = 0;
-$vista["incluir_js_extra"] = 0;
+$vista["css_extra"] = "";
+$vista["js_extra"] = "";
 $vista["titulo"] = "Inicio";
 $vista["error"] = "";
 $vista["info"] = "";

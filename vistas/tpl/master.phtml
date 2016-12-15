@@ -15,10 +15,7 @@
 			href="<?php echo $this->obtenerUrlVistas() ?>css/main.css" />
 			
 			<?php
-            if ($this->vista['incluir_css_extra'] == 1){
-				$this->vista["error"] .=
-				$this->cargarExtrasVista('css', $this->vista['pagina']);
-            }
+            if ($this->vista['css_extra'] != "") $this->cargarUnaVista($this->vista['css_extra'])
             ?>
 		</head>
 		
@@ -32,10 +29,7 @@
 			src="<?php echo $this->obtenerUrlVistas() ?>js/main.js"></script>
 			
 			<?php
-            if ($this->vista['incluir_js_extra'] == 1){
-                $this->vista["error"] .=
-				$this->cargarExtrasVista('js', $this->vista['pagina']);
-            }
+            if ($this->vista['js_extra'] != "") $this->cargarUnaVista($this->vista['js_extra'])
             ?>
 		</body>
 	</html>
