@@ -24,8 +24,8 @@ class Inicio extends Controlador{
 		$this->vista["titulo"] = "Inicio";
 		$this->vista["con_masterpage"] = 1;
 		$this->vista["pagina"] = "html/inicio.phtml";
-		$this->vista["incluir_css_extra"] = 1;
-		$this->vista["incluir_js_extra"] = 0;
+		$this->vista["css_extra"] = "html/extra_css/inicio_css.phtml";
+		$this->vista["js_extra"] = "";
 		$this->vista["info"] = "Ejemplo de info !!";
 		$this->vista["error"] = "Ejemplo de error !!";
 		
