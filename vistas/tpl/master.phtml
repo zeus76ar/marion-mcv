@@ -11,17 +11,18 @@
 			<title><?php echo $this->vista["titulo"] ?></title>
 			
             <!-- CSS -->
-			<link rel="stylesheet" type="text/css"
-			href="<?php echo $this->obtenerUrlVistas() ?>css/main.css" />
-			
 			<?php
             if ($this->vista['css_extra'] != "") $this->cargarUnaVista($this->vista['css_extra'])
             ?>
+			
+			<link rel="stylesheet" type="text/css"
+			href="<?php echo $this->obtenerUrlVistas() ?>css/main.css" />
 		</head>
 		
 		<body>
 			<?php $this->cargarUnaVista($this->vista['pagina']) ?>
 			
+			<!-- js -->
 			<script type="text/javascript">
 				var dirvista = '<?php echo $this->obtenerUrlVistas() ?>';
 			</script>
