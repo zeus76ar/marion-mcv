@@ -11,7 +11,7 @@ ini_set("display_errors", $config["mostrar_errores"]);
 
 date_default_timezone_set($config["timezone"]);
 
-header($config["charset"]);
+header('charset=' . $config["charset"]);
 
 $protocolo = 'http';
 if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') $protocolo = 'https';
